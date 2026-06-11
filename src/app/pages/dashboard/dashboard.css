@@ -1,0 +1,104 @@
+.dashboard-container{
+
+  padding:40px;
+
+  background:#f5f7fb;
+
+  min-height:100vh;
+}
+
+.dashboard-header{
+
+  margin-bottom:35px;
+}
+
+.dashboard-header h1{
+
+  margin:0;
+
+  color:#111827;
+
+  font-size:38px;
+}
+
+.dashboard-header p{
+
+  color:#6b7280;
+
+  margin-top:8px;
+}
+
+.cards{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+
+  gap:25px;
+}
+
+.card{
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:30px;
+
+  text-align:center;
+
+  box-shadow:
+  0 6px 20px rgba(0,0,0,.08);
+
+  transition:.3s;
+}
+
+.card:hover{
+
+  transform:translateY(-5px);
+}
+
+.card h2{
+
+  margin:0;
+
+  font-size:42px;
+
+  font-weight:700;
+}
+
+.card p{
+
+  margin-top:10px;
+
+  font-size:17px;
+
+  color:#6b7280;
+}
+
+/* Color Themes */
+
+.users h2{
+  color:#2563eb;
+}
+
+.buses h2{
+  color:#16a34a;
+}
+
+.bookings h2{
+  color:#d84e55;
+}
+
+.travels h2{
+  color:#9333ea;
+}
+
+.revenue h2{
+  color:#f59e0b;
+}
+
+.cancelled h2{
+  color:#ef4444;
+}

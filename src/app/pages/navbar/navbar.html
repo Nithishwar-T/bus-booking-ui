@@ -1,0 +1,46 @@
+<nav>
+
+  <h2>
+    Bus Booking
+  </h2>
+
+  <div>
+
+    <a routerLink="/dashboard">
+      Dashboard
+    </a>
+
+    <a routerLink="/buses">
+      Buses
+    </a>
+
+    <a routerLink="/booking">
+      Booking
+    </a>
+
+    <a routerLink="/my-bookings">
+      My Bookings
+    </a>
+
+    <a
+      *ngIf="roleId==='2'"
+      routerLink="/admin-dashboard">
+
+      Admin
+
+    </a>
+
+    <span class="user-badge">
+
+     Welcome {{email}}
+    </span>
+
+    <button (click)="logout()">
+
+      Logout
+
+    </button>
+
+  </div>
+
+</nav>

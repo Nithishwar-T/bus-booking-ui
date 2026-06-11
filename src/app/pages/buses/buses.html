@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        Available Buses
+    </h2>
+
+    <div
+        class="bus-card"
+        *ngFor="let bus of buses">
+
+        <div class="row align-items-center">
+
+            <div class="col-md-6">
+
+                <h4>
+                    {{bus.busName}}
+                </h4>
+
+                <p class="text-muted">
+
+                    {{bus.busType}}
+
+                </p>
+
+                <p>
+
+                    Bus No:
+                    {{bus.busNumber}}
+
+                </p>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <h5>
+
+                    Seats
+
+                </h5>
+
+                <p>
+
+                    {{bus.totalSeats}}
+
+                </p>
+
+            </div>
+
+            <div class="col-md-3 text-end">
+                <h3 class="text-success">
+  ₹{{bus.price}}
+</h3>
+
+                <button
+                    class="btn btn-danger">
+
+                    View Seats
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

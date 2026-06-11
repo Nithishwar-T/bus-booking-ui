@@ -1,0 +1,116 @@
+<app-navbar></app-navbar>
+
+<div class="booking-page">
+
+  <h1>
+    My Bookings
+  </h1>
+  <div class="search-box">
+
+  <input
+    type="text"
+
+    placeholder="
+    Search Booking
+    "
+
+    [(ngModel)]="searchText"
+
+    (input)="searchBookings()">
+
+</div>
+
+  <div
+    class="booking-card"
+    *ngFor="
+let booking of filteredBookings">
+
+    <div class="left">
+
+      <h2>
+
+        {{booking.passengerName}}
+
+      </h2>
+
+      <p>
+
+        Ref:
+        {{booking.bookingReference}}
+
+      </p>
+
+      <p>
+
+        Seat:
+        {{booking.seatNumber}}
+
+      </p>
+
+      <p>
+
+        {{booking.email}}
+
+      </p>
+
+    </div>
+
+    <div class="center">
+
+     <span
+
+  class="status"
+
+  [ngClass]="{
+
+    'booked':
+      booking.status === 'Booked',
+
+    'cancelled':
+      booking.status === 'Cancelled'
+
+  }">
+
+  {{booking.status}}
+
+</span>
+
+    </div>
+
+    <div class="right">
+
+      <button
+        class="invoice-btn"
+        (click)="openInvoice(
+          booking.bookingId
+        )">
+
+        Invoice
+
+      </button>
+<button
+  class="invoice-btn"
+  [routerLink]="[
+    '/invoice',
+    booking.bookingId
+  ]">
+
+  View Invoice
+
+</button>
+      <button
+        class="cancel-btn"
+        (click)="cancelBooking(
+          booking.bookingId
+        )">
+
+        Cancel
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+<app-footer></app-footer>

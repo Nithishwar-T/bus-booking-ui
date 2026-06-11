@@ -1,0 +1,301 @@
+.booking-container{
+
+  background:#f5f7fb;
+
+  min-height:100vh;
+
+  padding:30px;
+}
+
+.hero-section{
+
+  background:
+  linear-gradient(
+    135deg,
+    #d84e55,
+    #991b1b
+  );
+
+  color:white;
+
+  padding:40px;
+
+  border-radius:25px;
+
+  margin-bottom:30px;
+}
+
+.hero-section h1{
+
+  margin:0;
+
+  font-size:42px;
+
+  font-weight:700;
+}
+
+.search-box{
+
+  margin-top:25px;
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:15px;
+}
+
+.search-box input{
+
+  padding:15px;
+
+  border:none;
+
+  border-radius:12px;
+
+  min-width:220px;
+}
+
+.search-box button{
+
+  background:white;
+
+  color:#d84e55;
+
+  border:none;
+
+  padding:15px 25px;
+
+  border-radius:12px;
+
+  font-weight:700;
+}
+
+.bus-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+}
+
+.bus-card{
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:25px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  box-shadow:
+  0 6px 20px rgba(0,0,0,.08);
+
+  transition:.3s;
+}
+
+.bus-card:hover{
+
+  transform:translateY(-4px);
+}
+
+.bus-left h2{
+
+  margin:0;
+
+  color:#111827;
+}
+
+.bus-type{
+
+  color:#6b7280;
+}
+
+.bus-center{
+
+  text-align:center;
+}
+
+.rating{
+
+  background:#16a34a;
+
+  color:white;
+
+  padding:6px 12px;
+
+  border-radius:8px;
+
+  font-weight:700;
+}
+
+.price{
+
+  color:#d84e55;
+
+  font-size:30px;
+
+  font-weight:700;
+}
+
+.bus-right button{
+
+  background:#d84e55;
+
+  color:white;
+
+  border:none;
+
+  padding:12px 25px;
+
+  border-radius:10px;
+
+  font-weight:700;
+
+  cursor:pointer;
+}
+
+/* Seats */
+
+.seat-section{
+
+  margin-top:35px;
+
+  background:white;
+
+  padding:30px;
+
+  border-radius:20px;
+
+  box-shadow:
+  0 6px 20px rgba(0,0,0,.08);
+}
+
+.seat-title{
+
+  color:#d84e55;
+}
+
+.seat-layout{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,80px);
+
+  gap:15px;
+
+  margin-bottom:25px;
+}
+
+.seat{
+
+  height:70px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#22c55e;
+
+  color:white;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.seat:hover{
+
+  transform:scale(1.05);
+}
+
+.booked-seat{
+
+  background:#ef4444 !important;
+
+  color:white;
+}
+
+.selected-seat{
+
+  background:#2563eb !important;
+
+  color:white;
+}
+
+.booking-form{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:15px;
+
+  margin-top:20px;
+}
+
+.booking-form input,
+.booking-form select{
+
+  padding:14px;
+
+  border:1px solid #ddd;
+
+  border-radius:10px;
+
+  min-width:220px;
+}
+
+.book-btn{
+
+  background:#d84e55;
+
+  color:white;
+
+  border:none;
+
+  padding:15px 35px;
+
+  border-radius:10px;
+
+  font-weight:700;
+
+  cursor:pointer;
+}
+
+.travel-tag{
+
+  display:inline-block;
+
+  margin-right:10px;
+
+  margin-top:10px;
+
+  background:#eef2ff;
+
+  color:#4338ca;
+
+  padding:6px 12px;
+
+  border-radius:20px;
+
+  font-size:13px;
+
+  font-weight:600;
+}
+
+.bus-center p{
+
+  margin:6px 0;
+
+  color:#6b7280;
+}

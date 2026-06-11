@@ -1,0 +1,59 @@
+<div
+  id="invoice-content"
+  class="invoice-card"
+  *ngIf="invoice">
+
+  <h1>
+    Bus Ticket Invoice
+  </h1>
+
+  <hr>
+
+  <p>
+    <strong>Booking Id:</strong>
+    {{invoice.bookingId}}
+  </p>
+
+  <p>
+    <strong>Passenger:</strong>
+    {{invoice.passengerName}}
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    {{invoice.email}}
+  </p>
+
+  <p>
+    <strong>Booking Reference:</strong>
+    {{invoice.bookingReference}}
+  </p>
+
+  <p>
+    <strong>Amount:</strong>
+    ₹{{invoice.amount}}
+  </p>
+
+  <p>
+    <strong>Payment Method:</strong>
+    {{invoice.paymentMethod}}
+  </p>
+
+  <p>
+    <strong>Booking Date:</strong>
+    {{invoice.bookingDate | date}}
+  </p>
+
+</div>
+
+<div class="text-center mt-3">
+
+  <button
+    class="download-btn"
+    (click)="downloadPdf()">
+
+    Download PDF
+
+  </button>
+
+</div>

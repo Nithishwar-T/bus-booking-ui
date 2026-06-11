@@ -1,0 +1,144 @@
+<app-navbar></app-navbar>
+
+<div class="admin-container">
+
+  <div class="admin-header">
+
+    <h1>
+      Bus Management
+    </h1>
+
+    <p>
+      Add, manage and monitor buses
+    </p>
+
+  </div>
+
+  <div class="stats-row">
+
+    <div class="mini-card">
+
+      <h2>{{ buses.length }}</h2>
+
+      <p>Total Buses</p>
+
+    </div>
+
+    <div class="mini-card">
+
+      <h2>Active</h2>
+
+      <p>Service Status</p>
+
+    </div>
+
+    <div class="mini-card">
+
+      <h2>24x7</h2>
+
+      <p>Support</p>
+
+    </div>
+
+  </div>
+
+  <div class="form-card">
+
+    <h2>Add New Bus</h2>
+
+    <div class="form">
+
+      <input
+        type="text"
+        placeholder="Bus Name"
+        [(ngModel)]="busName">
+
+      <input
+        type="text"
+        placeholder="Bus Number"
+        [(ngModel)]="busNumber">
+
+      <input
+        type="number"
+        placeholder="Travel Id"
+        [(ngModel)]="travelId">
+
+      <input
+        type="text"
+        placeholder="Bus Type"
+        [(ngModel)]="busType">
+
+      <input
+        type="number"
+        placeholder="Total Seats"
+        [(ngModel)]="totalSeats">
+
+      <button
+        (click)="addBus()">
+
+        Add Bus
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="table-card">
+
+    <h2>Bus List</h2>
+
+    <table>
+
+      <thead>
+
+        <tr>
+
+          <th>Bus Name</th>
+
+          <th>Bus Number</th>
+
+          <th>Bus Type</th>
+
+          <th>Total Seats</th>
+
+          <th>Action</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let bus of buses">
+
+          <td>{{ bus.busName }}</td>
+
+          <td>{{ bus.busNumber }}</td>
+
+          <td>{{ bus.busType }}</td>
+
+          <td>{{ bus.totalSeats }}</td>
+
+          <td>
+
+            <button
+              class="delete-btn"
+              (click)="deleteBus(bus.busId)">
+
+              Delete
+
+            </button>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+<app-footer></app-footer>

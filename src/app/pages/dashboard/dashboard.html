@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+
+<div class="dashboard-container">
+
+  <div class="dashboard-header">
+
+    <h1>
+      Admin Dashboard
+    </h1>
+
+    <p>
+      Monitor bookings, buses, revenue and travel statistics
+    </p>
+
+  </div>
+
+  <div class="cards">
+
+    <div class="card users">
+
+      <h2>{{ totalUsers }}</h2>
+
+      <p>Total Users</p>
+
+    </div>
+
+    <div class="card buses">
+
+      <h2>{{ totalBuses }}</h2>
+
+      <p>Total Buses</p>
+
+    </div>
+
+    <div class="card bookings">
+
+      <h2>{{ totalBookings }}</h2>
+
+      <p>Total Bookings</p>
+
+    </div>
+
+    <div class="card travels">
+
+      <h2>{{ totalTravels }}</h2>
+
+      <p>Total Travels</p>
+
+    </div>
+
+    <div class="card revenue">
+
+      <h2>₹{{ totalRevenue }}</h2>
+
+      <p>Total Revenue</p>
+
+    </div>
+
+    <div class="card cancelled">
+
+      <h2>{{ totalCancelledBookings }}</h2>
+
+      <p>Cancelled Bookings</p>
+
+    </div>
+
+  </div>
+
+</div>
+<app-footer></app-footer>

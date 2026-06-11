@@ -1,0 +1,284 @@
+<app-navbar></app-navbar>
+
+<div class="booking-container">
+
+  <div class="hero-section">
+
+    <h1>Book Bus Tickets</h1>
+
+    <p>Travel comfortably with the best operators</p>
+
+    <div class="search-box">
+
+     <input
+  type="text"
+
+  placeholder="Search Bus"
+
+  [(ngModel)]="searchText">
+      <input
+        type="text"
+        placeholder="To">
+
+      <input
+        type="date">
+
+      <button
+  (click)="searchBus()">
+
+  Search Buses
+
+</button>
+    </div>
+
+  </div>
+
+  <h2 class="results-title">
+    Available Buses ({{ filteredBuses.length }})
+  </h2>
+
+  <div class="bus-list">
+
+   @for(bus of filteredBuses; track bus.busId){
+
+    <div class="bus-card">
+
+      <div class="bus-left">
+
+        <h2>{{ bus.busName }}</h2>
+
+        <p class="bus-type">
+          {{ bus.busType }}
+        </p>
+
+        <p>
+          Bus No:
+          {{ bus.busNumber }}
+        </p>
+        
+
+      </div>
+      <span class="travel-tag">
+
+  AC Sleeper
+
+</span>
+
+<span class="travel-tag">
+
+  Live Tracking
+
+</span>
+
+      <div class="bus-center">
+
+  <h3>
+
+    {{ bus.departure }}
+
+    →
+
+    {{ bus.arrival }}
+
+  </h3>
+
+  <p>
+
+    Duration :
+    {{ bus.duration }}
+
+  </p>
+
+  <p>
+
+    Available Seats :
+    {{ bus.availableSeats }}
+
+  </p>
+
+  <span class="rating">
+
+    ★ {{ bus.rating }}
+
+  </span>
+
+</div>
+      <div class="bus-right">
+
+        <h2 class="price">
+         ₹{{ bus.price }}
+        </h2>
+
+        <button
+          (click)="selectBus(bus)">
+          View Seats
+        </button>
+
+      </div>
+
+    </div>
+
+    }
+
+  </div>
+
+  <div
+    *ngIf="selectedBus"
+    class="seat-section">
+
+    <h2 class="seat-title">
+
+      {{ selectedBus.busName }}
+
+    </h2>
+
+    <p>
+
+      Select Your Seat
+
+    </p>
+
+    <div class="selected-info">
+
+      Selected Seat :
+      {{ selectedSeat || 'Not Selected' }}
+
+    </div>
+
+    <h3>Upper Sleeper</h3>
+
+<div class="seat-layout">
+
+  <button
+  *ngFor="let seat of upperSeats"
+
+  class="seat"
+
+  [disabled]="bookedSeats.includes(seat)"
+
+  [class.booked-seat]="
+    bookedSeats.includes(seat)
+  "
+
+  [class.selected-seat]="
+    selectedSeat===seat
+  "
+
+  (click)="selectSeat(seat)">
+
+  {{seat}}
+
+</button>
+
+</div>
+
+<h3>Lower Sleeper</h3>
+
+<div class="seat-layout">
+
+  <button
+  *ngFor="let seat of lowerSeats"
+
+  class="seat"
+
+  [disabled]="bookedSeats.includes(seat)"
+
+  [class.booked-seat]="
+    bookedSeats.includes(seat)
+  "
+
+  [class.selected-seat]="
+    selectedSeat===seat
+  "
+
+  (click)="selectSeat(seat)">
+
+  {{seat}}
+
+</button>
+
+</div>
+
+<h3>Push Back Seats</h3>
+
+<div class="seat-layout">
+
+  <button
+  *ngFor="let seat of pushBackSeats"
+
+  class="seat"
+
+  [disabled]="bookedSeats.includes(seat)"
+
+  [class.booked-seat]="
+    bookedSeats.includes(seat)
+  "
+
+  [class.selected-seat]="
+    selectedSeat===seat
+  "
+
+  (click)="selectSeat(seat)">
+
+  {{seat}}
+
+</button>
+
+</div>
+
+    <div class="booking-form">
+
+      <input
+        type="text"
+        placeholder="Passenger Name"
+        [(ngModel)]="passengerName">
+
+      <input
+        type="number"
+        placeholder="Age"
+        [(ngModel)]="age">
+
+      <select
+        [(ngModel)]="gender">
+
+        <option value="">
+          Select Gender
+        </option>
+
+        <option value="Male">
+          Male
+        </option>
+
+        <option value="Female">
+          Female
+        </option>
+
+      </select>
+
+      <input
+        type="text"
+        placeholder="Mobile Number"
+        [(ngModel)]="mobile">
+
+      <input
+        type="email"
+        placeholder="Email"
+        [(ngModel)]="email">
+
+    </div>
+
+    <br>
+
+    <button
+      class="book-btn"
+      (click)="createBooking()">
+
+      Book Ticket
+
+    </button>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>
